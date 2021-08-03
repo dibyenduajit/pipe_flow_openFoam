@@ -1,0 +1,9 @@
+#!/bin/sh
+./Allclean
+blockMesh > blockMesh.log
+snappyHexMesh -overwrite > snappyHexMesh.log
+touch snappy-cylinder.foam                               # Run from this directory
+. ${WM_PROJECT_DIR:?}/bin/tools/CleanFunctions      # Tutorial clean functions
+#------------------------------------------------------------------------------
+cleanCase
+#------------------------------------------------------------------------------
